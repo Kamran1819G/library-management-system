@@ -88,9 +88,12 @@ include '../header.php';
     			<thead>
     				<tr>
     					<th>Image</th>
-                        <th>User Unique ID</th>
-                        <th>User Name</th>
-						<th>User PRN No</th>
+                        <th>Unique ID</th>
+                        <th>Name</th>
+						<th>PRN No</th>
+						<th>Course Name</th>
+						<th>Studying Year</th>
+						<th>Admission year</th>
                         <th>Email Address</th>
                         <th>Password</th>
                         <th>Contact No.</th>
@@ -105,9 +108,12 @@ include '../header.php';
     			<tfoot>
     				<tr>
     					<th>Image</th>
-                        <th>User Unique ID</th>
-                        <th>User Name</th>
-						<th>User PRN No</th>
+                        <th>Unique ID</th>
+                        <th>Name</th>
+						<th>PRN No</th>
+						<th>Course Name</th>
+						<th>Studying Year</th>
+						<th>Admission year</th>
                         <th>Email Address</th>
                         <th>Password</th>
                         <th>Contact No.</th>
@@ -140,6 +146,9 @@ include '../header.php';
     						<td>'.$row["user_unique_id"].'</td>
     						<td>'.$row["user_name"].'</td>
 							<td>'.$row["user_prn_no"].'</td>
+							<td>'.$row["user_course_name"].'</td>
+							<td>'.$row["user_studying_year"].'</td>
+							<td>'.$row["user_admission_year"].'</td>
     						<td>'.$row["user_email_address"].'</td>
     						<td>'.$row["user_password"].'</td>
     						<td>'.$row["user_contact_no"].'</td>

@@ -62,6 +62,42 @@ if(isset($_POST['save_button']))
 		$formdata['user_address'] = trim($_POST['user_address']);
 	}
 
+	if(empty($_POST['user_prn_no']))
+	{
+		$message .= '<li>User PRN No. is required</li>';
+	}
+	else
+	{
+		$formdata['user_prn_no'] = $_POST['user_prn_no'];
+	}
+
+	if(empty($_POST['user_course_name']))
+	{
+		$message .= '<li>User Course Detail is required</li>';
+	}
+	else
+	{
+		$formdata['user_course_name'] = $_POST['user_course_name'];
+	}
+
+	if(empty($_POST['user_studying_year']))
+	{
+		$message .= '<li>User Studying Year is required</li>';
+	}
+	else
+	{
+		$formdata['user_studying_year'] = $_POST['user_studying_year'];
+	}
+
+	if(empty($_POST['user_admission_year']))
+	{
+		$message .= '<li>User Admission Year is required</li>';
+	}
+	else
+	{
+		$formdata['user_admission_year'] = $_POST['user_admission_year'];
+	}
+
 	if(empty($_POST['user_contact_no']))
 	{
 		$message .= '<li>User Address Detail is required</li>';
@@ -119,6 +155,10 @@ if(isset($_POST['save_button']))
 		$data = array(
 			':user_name'			=>	$formdata['user_name'],
 			':user_address'			=>	$formdata['user_address'],
+			':user_prn_no'			=>	$formdata['user_prn_no'],
+			':user_course_name'		=>	$formdata['user_course_name'],
+			':user_admission_year'	=>	$formdata['user_admission_year'],
+			':user_studying_year'	=>	$formdata['user_studying_year'],
 			':user_contact_no'		=>	$formdata['user_contact_no'],
 			':user_profile'			=>	$formdata['user_profile'],
 			':user_email_address'	=>	$formdata['user_email_address'],
@@ -130,7 +170,11 @@ if(isset($_POST['save_button']))
 		$query = "
 		UPDATE lms_user 
             SET user_name = :user_name, 
-            user_address = :user_address, 
+            user_address = :user_address,
+			user_prn_no = :user_prn_no,
+			user_course_name = :user_course_name,
+			user_admission_year = :user_admission_year,
+			user_studying_year = :user_studying_year, 
             user_contact_no = :user_contact_no, 
             user_profile = :user_profile, 
             user_email_address = :user_email_address, 
@@ -191,6 +235,22 @@ include 'header.php';
 					<div class="mb-3">
 						<label class="form-label">User Name</label>
 						<input type="text" name="user_name" id="user_name" class="form-control" value="<?php echo $row['user_name']; ?>" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">User PRN No.</label>
+						<input type="text" name="user_prn_no" id="user_prn_no" class="form-control" value="<?php echo $row['user_prn_no']; ?>" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Course Name</label>
+						<input type="text" name="user_course_name" id="user_course_name" class="form-control" value="<?php echo $row['user_course_name']; ?>" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Studying year</label>
+						<input type="text" name="user_studying_year" id="user_studying_year" class="form-control" value="<?php echo $row['user_studying_year']; ?>" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Admission year</label>
+						<input type="text" name="user_admission_year" id="user_admission_year" class="form-control" value="<?php echo $row['user_admission_year']; ?>" />
 					</div>
 					<div class="mb-3">
 						<label class="form-label">User Contact No.</label>

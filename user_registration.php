@@ -256,7 +256,7 @@ include 'header.php';
 						<input type="password" name="user_password" id="user_password" class="form-control" />
 					</div>
 					<div class="mb-3">
-						<label class="form-label">User Name</label>
+						<label class="form-label">Student Name</label>
                         <input type="text" name="user_name" class="form-control" id="user_name" value="" />
                     </div>
 					<div class="mb-3">
@@ -264,7 +264,19 @@ include 'header.php';
 						<input type="text" name="user_prn_no" id="user_prn_no" class="form-control" />
 					</div>
 					<div class="mb-3">
-						<label class="form-label">User Contact No.</label>
+						<label class="form-label">Course Name</label>
+						<input type="text" name="user_course_name" id="user_course_name" class="form-control" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Studying year</label>
+						<input type="text" name="user_studying_year" id="user_studying_year" class="form-control" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Admission year</label>
+						<input type="text" name="user_admission_year" id="user_admission_year" class="form-control" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Student Contact No.</label>
 						<input type="text" name="user_contact_no" id="user_contact_no" class="form-control" />
 					</div>
 					<div class="mb-3">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2022 at 08:51 PM
+-- Generation Time: Jun 06, 2022 at 03:53 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -155,10 +155,13 @@ CREATE TABLE `lms_user` (
   `user_unique_id` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `user_prn_no` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `user_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `user_course_name` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_studying_year` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_admission_year` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `user_contact_no` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `user_email_address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `user_address` text COLLATE utf8_unicode_ci NOT NULL,
   `user_profile` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `user_email_address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `user_password` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `user_verificaton_code` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `user_verification_status` enum('No','Yes') COLLATE utf8_unicode_ci NOT NULL,
@@ -171,8 +174,8 @@ CREATE TABLE `lms_user` (
 -- Dumping data for table `lms_user`
 --
 
-INSERT INTO `lms_user` (`user_id`, `user_unique_id`, `user_prn_no`, `user_name`, `user_contact_no`, `user_email_address`, `user_address`, `user_profile`, `user_password`, `user_verificaton_code`, `user_verification_status`, `user_status`, `user_created_on`, `user_updated_on`) VALUES
-(1, 'UQ3242342', '2143110133', 'Kamran Khan', '0000000000', 'demo@gmail.com', 'None', '1654267156-413630167.png', 'demo', 'b190bcd6e3b29674db036670cf122724', 'Yes', 'Enable', '2022-06-01 12:21:40', '');
+INSERT INTO `lms_user` (`user_id`, `user_unique_id`, `user_prn_no`, `user_name`, `user_course_name`, `user_studying_year`, `user_admission_year`, `user_contact_no`, `user_address`, `user_profile`, `user_email_address`, `user_password`, `user_verificaton_code`, `user_verification_status`, `user_status`, `user_created_on`, `user_updated_on`) VALUES
+(1, 'UQ3242342', '2114650545', 'Kamran Khan', 'CSE (AIML)', '1st', '2021', '8097905879', 'None', '1654267156-413630167.png', 'demo@gmail.com', 'demo', 'b190bcd6e3b29674db036670cf122724', 'Yes', 'Enable', '2022-06-01 12:21:40', '2022-06-06 19:11:58');
 
 --
 -- Indexes for dumped tables
