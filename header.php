@@ -19,6 +19,7 @@
         <link href="<?php echo base_url(); ?>asset/css/styles.css" rel="stylesheet" />
         <script src="<?php echo base_url(); ?>asset/js/font-awesome-5-all.min.js" crossorigin="anonymous"></script>
         <!-- Favicons -->
+        <link rel="icon" type="image/x-icon" href="asset/images/favicon.ico">
         <link rel="apple-touch-icon" href="" sizes="180x180">
         <link rel="icon" href="" sizes="32x32" type="image/png">
         <link rel="icon" href="" sizes="16x16" type="image/png">
