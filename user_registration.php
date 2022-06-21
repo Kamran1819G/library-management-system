@@ -171,19 +171,19 @@ if (isset($_POST["register_button"])) {
 
 				$mail->isSMTP();
 
-				$mail->Host = 'smtp-mail.outlook.com';  //Here you have to define GMail SMTP
+				$mail->Host = 'smtp-mail.outlook.com';  //Here you have to define SMTP
 
 				$mail->SMTPAuth = true;
 
-				$mail->Username = 'kmkhandet21-cseaiml@bvucoep.edu.in';  //Here you can use your Gmail Email Address
+				$mail->Username = 'Here Your Outlook Email Id';  //Here you can use your Email Address
 
-				$mail->Password = '9967487696@Upi';  //Here you can use your Gmail Address Password
+				$mail->Password = 'Here Password';  //Here you can use your Address Password
 
 				$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
 				$mail->Port = 587;
 
-				$mail->setFrom('kmkhandet21-cseaiml@bvucoep.edu.in', 'Khan Kamran');
+				$mail->setFrom('Here Sender Email Id', 'Here Sender Name');
 
 				$mail->addAddress($formdata['user_email_address'], $formdata['user_name']);
 
