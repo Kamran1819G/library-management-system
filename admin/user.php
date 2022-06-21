@@ -95,7 +95,6 @@ include '../header.php';
 						<th>Studying Year</th>
 						<th>Admission year</th>
                         <th>Email Address</th>
-                        <th>Password</th>
                         <th>Contact No.</th>
                         <th>Address</th>
                         <th>Email Verified</th>
@@ -115,7 +114,6 @@ include '../header.php';
 						<th>Studying Year</th>
 						<th>Admission year</th>
                         <th>Email Address</th>
-                        <th>Password</th>
                         <th>Contact No.</th>
                         <th>Address</th>
                         <th>Email Verified</th>
@@ -150,7 +148,6 @@ include '../header.php';
 							<td>'.$row["user_studying_year"].'</td>
 							<td>'.$row["user_admission_year"].'</td>
     						<td>'.$row["user_email_address"].'</td>
-    						<td>'.$row["user_password"].'</td>
     						<td>'.$row["user_contact_no"].'</td>
     						<td>'.$row["user_address"].'</td>
     						<td>'.$row["user_verification_status"].'</td>

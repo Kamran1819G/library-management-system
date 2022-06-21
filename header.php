@@ -28,11 +28,11 @@
         <meta name="theme-color" content="#7952b3">
         <style>
             .list-inline-item{
-                padding: 15px;
+                padding-bottom: 15px;
                 margin: 0 7px;
             }
             .name{
-                margin-left: 21px;
+                margin-left: 7px;
             }
             .bd-placeholder-img {
                 font-size: 1.125rem;

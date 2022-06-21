@@ -14,9 +14,9 @@ include 'header.php';
 
 ?>
 
-<div class="p-5 mb-4 bg-light rounded-3" style="display: flex;">
+<div class="p-5 mb-4 bg-light rounded-3 banner" style="display: flex;">
 <div>
-	<img src="./asset/images/girl-with-books.gif" alt="library" style="height: 250px; width: 450px">
+	<img class="girl-with-book-gif" src="./asset/images/girl-with-books.gif" alt="library" style="width: auto; height: 300px">
 </div>
 	<div class="container-fluid py-5">
 		<h1 class="display-5 fw-bold" style="padding: 50px">BVPDUDET Library</h1>

@@ -65,6 +65,33 @@ if(isset($_POST["register_button"]))
 		$formdata['user_prn_no'] = trim($_POST['user_prn_no']);
 	}
 
+	if(empty($_POST['user_course_name']))
+	{
+		$message .= '<li>User Course Detail is required</li>';
+	}
+	else
+	{
+		$formdata['user_course_name'] = trim($_POST['user_course_name']);
+	}
+
+	if(empty($_POST['user_studying_year']))
+	{
+		$message .= '<li>User Studying Year is required</li>';
+	}
+	else
+	{
+		$formdata['user_studying_year'] = trim($_POST['user_studying_year']);
+	}
+
+	if(empty($_POST['user_admission_year']))
+	{
+		$message .= '<li>User Admission Year is required</li>';
+	}
+	else
+	{
+		$formdata['user_admission_year'] = trim($_POST['user_admission_year']);
+	}
+
 	if(empty($_POST['user_address']))
 	{
 		$message .= '<li>User Address Detail is required</li>';
@@ -160,6 +187,10 @@ if(isset($_POST["register_button"]))
 			$data = array(
 				':user_name'			=>	$formdata['user_name'],
 				':user_address'			=>	$formdata['user_address'],
+				':user_prn_no'			=>	$formdata['user_prn_no'],
+				':user_course_name'		=>	$formdata['user_course_name'],
+				':user_admission_year'	=>	$formdata['user_admission_year'],
+				':user_studying_year'	=>	$formdata['user_studying_year'],
 				':user_contact_no'		=>	$formdata['user_contact_no'],
 				':user_profile'			=>	$formdata['user_profile'],
 				':user_email_address'	=>	$formdata['user_email_address'],
@@ -173,8 +204,8 @@ if(isset($_POST["register_button"]))
 
 			$query = "
 			INSERT INTO lms_user 
-            (user_name, user_address, user_contact_no, user_profile, user_email_address, user_password, user_verificaton_code, user_verification_status, user_unique_id, user_status, user_created_on) 
-            VALUES (:user_name, :user_address, :user_contact_no, :user_profile, :user_email_address, :user_password, :user_verificaton_code, :user_verification_status, :user_unique_id, :user_status, :user_created_on)
+            (user_name, user_address, user_prn_no, user_course_name, user_admission_year, user_studying_year, user_contact_no, user_profile, user_email_address, user_password, user_verificaton_code, user_verification_status, user_unique_id, user_status, user_created_on) 
+            VALUES (:user_name, :user_address, :user_prn_no, :user_course_name, :user_admission_year, :user_studying_year, :user_contact_no, :user_profile, :user_email_address, :user_password, :user_verificaton_code, :user_verification_status, :user_unique_id, :user_status, :user_created_on)
 			";
 
 			$statement = $connect->prepare($query);
@@ -185,41 +216,48 @@ if(isset($_POST["register_button"]))
 
 			$mail = new PHPMailer(true);
 
+			try {
+			$mail->SMTPDebug = 2;
+
 			$mail->isSMTP();
 
 			$mail->Host = 'smtp.gmail.com';  //Here you have to define GMail SMTP
 
 			$mail->SMTPAuth = true;
 
-			$mail->Username = 'xxxx';  //Here you can use your Gmail Email Address
+			$mail->Username = 'linuxmastertutorials@gmail.com';  //Here you can use your Gmail Email Address
 
-			$mail->Password = 'xxxx';  //Here you can use your Gmail Address Password
+			$mail->Password = '9967487696@Upi';  //Here you can use your Gmail Address Password
 
 			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
-			$mail->Port = 80;
+			$mail->Port = 587;
 
-			$mail->setFrom('Here EMAIL Address', 'Here Name');
+			$mail->setFrom('linuxmastertutorials@gmail.com', 'Linux-Master Tutorials');
 
 			$mail->addAddress($formdata['user_email_address'], $formdata['user_name']);
 
 			$mail->isHTML(true);
 
-			$mail->Subject = 'Registration Verification for Library Management System';
+			$mail->Subject = 'Registration Verification for BVPDUDET Library Management System';
 
 			$mail->Body = '
-			 <p>Thank you for registering for Library Management System Demo & your Unique ID is <b>'.$user_unique_id.'</b> which will be used for issue book.</p>
+				<p>Thank you for registering for Library Management System & your Unique ID is <b>'.$user_unique_id.'</b> which will be used for issue book.</p>
 
                 <p>This is a verification email, please click the link to verify your email address.</p>
                 <p><a href="'.base_url().'verify.php?code='.$user_verificaton_code.'">Click to Verify</a></p>
                 <p>Thank you...</p>
 			';
 
+			$mail->AltBody = 'Body in plain text for non-HTML mail clients';
+
 			$mail->send();
 
 			$success = 'Verification Email sent to ' . $formdata['user_email_address'] . ', so before login first verify your email';
+		} catch (Exception $e) {
+			$message = "<li>Message could not be sent. Mailer Error:</li>{$mail->ErrorInfo}"; 
+	}
 		}
-
 	}
 }
 

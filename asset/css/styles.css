@@ -12204,3 +12204,9 @@ body {
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
 }
+
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column-reverse;
+  }
+}
